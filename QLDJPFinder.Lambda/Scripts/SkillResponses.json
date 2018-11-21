@@ -1,0 +1,18 @@
+﻿{
+  "IntentResponses": [
+    {
+      "Intent": "AMAZON.StopIntent",
+      "Response": "Good bye Kamrul, I am now stopping."
+    },
+    {
+      "Intent": "AMAZON.CancelIntent",
+      "Response": "Good bye Kamrul, I am now cancelling my operations."
+    }
+  ],
+  "LaunchResponse": "Hi Kamrul, I am your friend Alexa.",
+  "SessionEndedResponse": "Good bye Kamrul, you have a nice day.",
+  "RepromptResponse": "Sorry Kamrul, I didn't hear from you. Do you have any more question?",
+  "NotFoundResponse": "No person found in this area.",
+  "StopIntent": "AMAZON.StopIntent",
+  "CancelIntent": "AMAZON.CancelIntent"
+}

@@ -1,0 +1,56 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <GenerateRuntimeConfigurationFiles>true</GenerateRuntimeConfigurationFiles>
+    <AWSProjectType>Lambda</AWSProjectType>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <CustomCommands>
+      <CustomCommands>
+        <Command>
+          <type>AfterBuild</type>
+        </Command>
+      </CustomCommands>
+    </CustomCommands>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <CustomCommands>
+      <CustomCommands>
+        <Command>
+          <type>AfterBuild</type>
+          <command>dotnet publish -c release</command>
+        </Command>
+        <Command>
+          <type>AfterBuild</type>
+          <command>zip -r jpfinder.zip . -i ./*</command>
+          <workingdir>${TargetDir}/publish/</workingdir>
+        </Command>
+        <Command>
+          <type>AfterBuild</type>
+          <command>aws lambda update-function-code --function-name jp-finder --zip-file fileb://jpfinder.zip</command>
+          <workingdir>${TargetDir}/publish/</workingdir>
+        </Command>
+      </CustomCommands>
+    </CustomCommands>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
+    <PackageReference Include="Alexa.NET" Version="1.5.5" />
+    <PackageReference Include="Amazon.Lambda.Core" Version="1.0.0" />
+    <PackageReference Include="Amazon.Lambda.Serialization.Json" Version="1.4.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Scripts\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Scripts\SkillResponses.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Scripts\SkillResponses.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\QLDJPFinder.Core\QLDJPFinder.Core.csproj" />
+  </ItemGroup>
+</Project>
