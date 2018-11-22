@@ -68,7 +68,10 @@ namespace QLDJPFinder.Lambda
                     return this.CreateResponse(this.lambdaResponse.NotFoundResponse);
                 }
 
-                var responseText = $"Found {locations.Count} locations.";
+                int postCode;
+                var pluralText = locations.Count > 1 ? "s" : string.Empty;
+                var locationText = int.TryParse(area, out postCode) ? string.Empty : $" in {area}";
+                var responseText = $"Found {locations.Count} location{pluralText}{locationText}.";
                 responseText += locations.Aggregate(string.Empty, (r, e) => { r += $"{Environment.NewLine}{e.Title}."; return r; });
 
                 return this.CreateResponse(responseText);
