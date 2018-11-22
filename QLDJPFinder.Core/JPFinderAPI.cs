@@ -23,11 +23,10 @@ namespace QLDJPFinder.Core
                 using (var reader = new StreamReader(dataStream))
                 {
                     string responseFromServer = reader.ReadToEnd();
-                    var jpObject = JsonConvert.DeserializeObject<APIJSONObject>(responseFromServer);
-                    var allRecords = jpObject.Result.Records;
+                    var jsonObject = JsonConvert.DeserializeObject<APIJSONObject>(responseFromServer);
+                    var allRecords = jsonObject.Result.Records;
 
-                    int postCode;
-                    if (int.TryParse(area, out postCode))
+                    if (int.TryParse(area, out int postCode))
                     {
                         jpCollection.AddRange(allRecords.Where(x => x.PostCode == postCode).Take(limit));
                     }
