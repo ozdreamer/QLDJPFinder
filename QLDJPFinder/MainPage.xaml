@@ -3,7 +3,7 @@
     <StackLayout Orientation="Vertical" VerticalOptions="Center" HorizontalOptions="Center">
         <Image Source="{local:ImageResource QLDJPFinder.Resources.Finder.png}" VerticalOptions="Center" Margin="40"/>
         <StackLayout Orientation="Horizontal" VerticalOptions="Center">
-            <Entry x:Name="PostCode" Text="{Binding PostCode}" Placeholder="Post Code" WidthRequest="200" Keyboard="Numeric"/>
+            <Entry x:Name="Area" Text="{Binding Area}" Placeholder="Area" WidthRequest="200"/>
             <Button x:Name="Search" Text="Search" BackgroundColor="Green" TextColor="White" WidthRequest="100" Command="{Binding SearchCommand}"/>
         </StackLayout>
     </StackLayout>

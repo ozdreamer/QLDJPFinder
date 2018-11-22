@@ -17,7 +17,7 @@ namespace QLDJPFinder
 
         public IUserDialogs Dialog => UserDialogs.Instance;
 
-        public string PostCode { get; set; }
+        public string Area { get; set; }
 
         private IEnumerable<JPInfo> persons;
 
@@ -31,8 +31,8 @@ namespace QLDJPFinder
         {
             this.Dialog.ShowLoading("Searching");
 
-            var allPersons = await this.api.GetJPList(this.PostCode);
-            var postCodeInt = int.Parse(this.PostCode);
+            var allPersons = await this.api.GetJPList(this.Area, 5);
+            var postCodeInt = int.Parse(this.Area);
             this.persons = allPersons.Where(x => x.PostCode == postCodeInt);
 
             this.Dialog.HideLoading();

@@ -1,3 +1,4 @@
+using System;
 using System.IO;
 using System.Linq;
 using System.Reflection;
@@ -61,14 +62,14 @@ namespace QLDJPFinder.Lambda
                     area = slots["Area"].Value;
                 }
 
-                var persons = this.finder.GetJPList(area).Result;
-                if (!persons.Any())
+                var locations = this.finder.GetJPList(area, 5).Result;
+                if (!locations.Any())
                 {
                     return this.CreateResponse(this.lambdaResponse.NotFoundResponse);
                 }
 
-                var responseText = $"Found {persons.Count} persons.";
-                responseText += persons.Aggregate(string.Empty, (r, e) => { r += e.Title; return r; });
+                var responseText = $"Found {locations.Count} locations.";
+                responseText += locations.Aggregate(string.Empty, (r, e) => { r += $"{Environment.NewLine}{e.Title}."; return r; });
 
                 return this.CreateResponse(responseText);
             }
