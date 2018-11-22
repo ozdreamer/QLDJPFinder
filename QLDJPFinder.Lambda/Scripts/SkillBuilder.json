@@ -1,0 +1,46 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "finder",
+      "intents": [
+        {
+          "name": "AMAZON.FallbackIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "name": "SearchIntent",
+          "slots": [
+            {
+              "name": "Area",
+              "type": "AMAZON.City"
+            }
+          ],
+          "samples": [
+            "{Area}",
+            "find location around {Area}",
+            "find jp in {Area}",
+            "find location in {Area}",
+            "search location in {Area}"
+          ]
+        }
+      ],
+      "types": []
+    }
+  }
+}
