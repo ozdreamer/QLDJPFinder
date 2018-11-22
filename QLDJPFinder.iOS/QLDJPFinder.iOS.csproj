@@ -97,6 +97,7 @@
     <None Include="Entitlements.plist" />
     <None Include="Info.plist" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Render\KeyboardRender.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
@@ -159,5 +160,8 @@
       <Project>{4D70839D-C639-4D2D-A5BD-2002E4755EF6}</Project>
       <Name>QLDJPFinder</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Render\" />
   </ItemGroup>
 </Project>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:QLDJPFinder" x:Class="QLDJPFinder.MainPage">
-    <StackLayout Orientation="Vertical" VerticalOptions="Center" HorizontalOptions="Center">
-        <Image Source="{local:ImageResource QLDJPFinder.Resources.Finder.png}" VerticalOptions="Center" Margin="40"/>
+    <StackLayout Orientation="Vertical" VerticalOptions="StartAndExpand" HorizontalOptions="Center">
+        <Image Source="{local:ImageResource QLDJPFinder.Resources.Finder.png}" VerticalOptions="Center" Margin="40" HeightRequest="125" WidthRequest="125"/>
         <StackLayout Orientation="Horizontal" VerticalOptions="Center">
             <Entry x:Name="Area" Text="{Binding Area}" Placeholder="Area" WidthRequest="200"/>
             <Button x:Name="Search" Text="Search" BackgroundColor="Green" TextColor="White" WidthRequest="100" Command="{Binding SearchCommand}"/>

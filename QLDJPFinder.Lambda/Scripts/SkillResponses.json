@@ -9,7 +9,7 @@
       "Response": "Good bye Kamrul, I am now cancelling my operations."
     }
   ],
-  "LaunchResponse": "Hi Kamrul, I am your friend Alexa.",
+  "LaunchResponse": "Welcome to the justice of peace finder. Please tell me the location.",
   "SessionEndedResponse": "Good bye Kamrul, you have a nice day.",
   "RepromptResponse": "Sorry Kamrul, I didn't hear from you. Do you have any more question?",
   "NotFoundResponse": "No person found in this area.",
