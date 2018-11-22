@@ -76,6 +76,10 @@ namespace QLDJPFinder.Lambda
 
                 return this.CreateResponse(responseText);
             }
+            else if (request.Intent.Name == this.lambdaResponse.CancelIntent || request.Intent.Name == this.lambdaResponse.StopIntent)
+            {
+                return this.CreateResponse(this.lambdaResponse.SessionEndedResponse);
+            }
 
             return CreateResponse(this.lambdaResponse.RepromptResponse);
         }
