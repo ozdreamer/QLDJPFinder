@@ -6,7 +6,7 @@ using Acr.UserDialogs;
 using QLDJPFinder.Core;
 using Xamarin.Forms;
 
-namespace QLDJPFinder
+namespace QLDJPFinder.UI
 {
     public class MainViewModel
     {

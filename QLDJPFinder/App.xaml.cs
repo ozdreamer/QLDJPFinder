@@ -2,7 +2,7 @@
 using Xamarin.Forms.Xaml;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
-namespace QLDJPFinder
+namespace QLDJPFinder.UI
 {
     public partial class App : Application
     {

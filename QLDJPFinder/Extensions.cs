@@ -3,7 +3,7 @@ using System.Reflection;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace QLDJPFinder
+namespace QLDJPFinder.UI
 {
     [ContentProperty(nameof(Source))]
     public class ImageResourceExtension : IMarkupExtension

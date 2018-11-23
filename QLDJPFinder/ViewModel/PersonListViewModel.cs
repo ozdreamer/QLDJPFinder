@@ -2,7 +2,7 @@
 using System.Linq;
 using QLDJPFinder.Core;
 
-namespace QLDJPFinder
+namespace QLDJPFinder.UI
 {
     public class PersonListViewModel
     {

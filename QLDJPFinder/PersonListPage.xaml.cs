@@ -2,7 +2,7 @@
 using QLDJPFinder.Core;
 using Xamarin.Forms;
 
-namespace QLDJPFinder
+namespace QLDJPFinder.UI
 {
     public partial class PersonListPage : ContentPage
     {
