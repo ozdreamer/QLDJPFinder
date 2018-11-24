@@ -12,7 +12,7 @@
   "LaunchResponse": "Welcome to the justice of peace finder. Please tell me the area or post code.",
   "SessionEndedResponse": "Good bye Kamrul, you have a nice day.",
   "RepromptResponse": "Sorry Kamrul, I didn't hear from you. Do you have any more question?",
-  "NotFoundResponse": "No location found in this area.",
+  "NotFoundResponse": "No location found in",
   "StopIntent": "AMAZON.StopIntent",
   "CancelIntent": "AMAZON.CancelIntent"
 }

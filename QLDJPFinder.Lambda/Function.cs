@@ -65,7 +65,7 @@ namespace QLDJPFinder.Lambda
                 var locations = this.finder.GetJPList(area, 5).Result;
                 if (!locations.Any())
                 {
-                    return this.CreateResponse(this.lambdaResponse.NotFoundResponse);
+                    return this.CreateResponse($"{this.lambdaResponse.NotFoundResponse} {area}.");
                 }
 
                 int postCode;
