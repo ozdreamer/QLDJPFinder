@@ -1,8 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Newtonsoft.Json;
 
 namespace QLDJPFinder.Core
 {
+    [Serializable]
     public class APIJSONObject
     {
         [JsonProperty("help")]
@@ -15,6 +17,7 @@ namespace QLDJPFinder.Core
         public APIJSONResult Result { get; set; }
     }
 
+    [Serializable]
     public class APIJSONResult
     {
         [JsonProperty("include_total")]
@@ -33,6 +36,7 @@ namespace QLDJPFinder.Core
         public List<JPInfo> Records { get; set; }
     }
 
+    [Serializable]
     public class APIJSONField
     {
         [JsonProperty("type")]

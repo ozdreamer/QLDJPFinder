@@ -14,33 +14,33 @@ namespace QLDJPFinder.UI
 
         public ICommand SearchCommand { get; set; }
 
-        public JPFinderAPI api;
+        public JPFinderAPI finder;
 
         public IUserDialogs Dialog => UserDialogs.Instance;
 
         public string Area { get; set; }
 
-        private IEnumerable<JPInfo> persons;
+        private IEnumerable<JPInfo> locations;
 
         public MainViewModel()
         {
-            this.api = new JPFinderAPI();
+            this.finder = new JPFinderAPI();
             this.SearchCommand = new Command(this.PerformSearch);
         }
 
         public async void PerformSearch()
         {
             this.Dialog.ShowLoading("Searching");
-            this.persons = await this.api.GetJPList(this.Area, 5);
+            this.locations = await this.finder.GetJPList(this.Area, 5);
             this.Dialog.HideLoading();
 
-            if (!this.persons.Any())
+            if (!this.locations.Any())
             {
                 this.Dialog.Alert("No record found.");
                 return;
             }
 
-            await this.Navigation.PushAsync(new PersonListPage(this.persons));
+            await this.Navigation.PushAsync(new LocationsPage(this.locations));
         }
     }
 }

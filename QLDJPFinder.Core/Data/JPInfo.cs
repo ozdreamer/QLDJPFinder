@@ -1,7 +1,9 @@
-﻿using Newtonsoft.Json;
+﻿using System;
+using Newtonsoft.Json;
 
 namespace QLDJPFinder.Core
 {
+    [Serializable]
     public class JPInfo
     {
         [JsonProperty("_id")]

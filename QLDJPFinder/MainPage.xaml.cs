@@ -7,7 +7,7 @@ namespace QLDJPFinder.UI
         public MainPage()
         {
             this.BindingContext = new MainViewModel { Navigation = Navigation };
-            InitializeComponent();
+            this.InitializeComponent();
         }
     }
 }

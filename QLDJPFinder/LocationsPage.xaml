@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="QLDJPFinder.UI.PersonListPage">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="QLDJPFinder.UI.LocationsPage">
     <ContentPage.Content>
         <StackLayout>
             <Label Text="{Binding Count}" XAlign="Center" YAlign="Center" Margin="5" FontAttributes="Bold" />
             <BoxView WidthRequest="3" HeightRequest="3" Color="Navy" />
-            <ListView ItemsSource="{Binding Persons}" HasUnevenRows="true" SeparatorVisibility="None" Margin="5">
+            <ListView ItemsSource="{Binding Locations}" HasUnevenRows="true" SeparatorVisibility="None" Margin="5">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
